@@ -7,16 +7,21 @@ namespace DiceGame
         static void Main(string[] args)
         {
             Random rng = new Random();
+            
             string userName = "";
+            
             int chosenMenu = 0;
             int totalScore = 0;
             int dieA = 0, dieB = 0, dieC = 0, dieD = 0;
             int sum = 0;
+            
             //float centerX = Console.WindowWidth / 2;
             //float centerY = Console.WindowHeight / 2;
 
             Console.WriteLine("Please enter your name:");
+            
             userName = Console.ReadLine();
+            
             Console.Clear();
             Console.WriteLine();
             Console.WriteLine();
@@ -32,11 +37,14 @@ namespace DiceGame
             Console.WriteLine("                                      3 - Score Table                                   ");
             Console.WriteLine("                                      4 - Exit                                          ");
             Console.WriteLine("                             ##########################################################");
+            
             chosenMenu = Convert.ToInt32(Console.ReadLine());
+            
             if(chosenMenu == 4)
             {
                 return;
-            }else if(chosenMenu == 3)
+            }
+            else if(chosenMenu == 3)
             {
 
                 Console.Clear();
@@ -59,15 +67,20 @@ namespace DiceGame
 
                 Console.ReadLine();
                 return;
+                
             }
             else if (chosenMenu == 1)
             {
+                
                 dieA = rng.Next(1, 7);
                 dieB = rng.Next(1, 7);
                 dieC = rng.Next(1, 7);
                 dieD = rng.Next(1, 7);
-            }else if(chosenMenu == 2)
+                
+            }
+            else if(chosenMenu == 2)
             {
+                
                 Console.WriteLine("please enter the first die: (dice has 6 face)");
                 dieA = Convert.ToInt32(Console.ReadLine());
                 if(dieA < 1 || dieA > 6)
@@ -96,10 +109,13 @@ namespace DiceGame
                     Console.WriteLine("!!!Please enter a number between 1 and 6!!!");
                     dieD = Convert.ToInt32(Console.ReadLine());
                 }
+                
             }
+            
             Console.Clear();
             Console.WriteLine("First die is: " + dieA);
-            if(dieA == 1)
+            
+            if (dieA == 1)
             {
                 Console.WriteLine("|     |");
                 Console.WriteLine("|  *  |");
@@ -137,6 +153,7 @@ namespace DiceGame
             }
 
             Console.WriteLine("Second die is: " + dieB);
+            
             if (dieB == 1)
             {
                 Console.WriteLine("|     |");
@@ -173,7 +190,9 @@ namespace DiceGame
                 Console.WriteLine("|*   *|");
                 Console.WriteLine("|*   *|");
             }
+            
             Console.WriteLine("third die is: " + dieC);
+            
             if (dieC == 1)
             {
                 Console.WriteLine("|     |");
@@ -210,7 +229,9 @@ namespace DiceGame
                 Console.WriteLine("|*   *|");
                 Console.WriteLine("|*   *|");
             }
+            
             Console.WriteLine("Fourth die is: " + dieD);
+            
             if (dieD == 1)
             {
                 Console.WriteLine("|     |");
@@ -249,6 +270,7 @@ namespace DiceGame
             }
 
             Console.WriteLine("Dice are {0},{1},{2},{3}", dieA, dieB, dieC, dieD);
+            
             // calculates sum of the dice for rule 7, 8, 9
             sum = dieA + dieB + dieC + dieD;
 
@@ -256,31 +278,39 @@ namespace DiceGame
             if(12 <= sum && sum <= 16)
             {
                 totalScore += 2;
-            }else if ((8 <= sum && sum <= 11) || (17 <= sum && sum <= 20))
+            }
+            else if ((8 <= sum && sum <= 11) || (17 <= sum && sum <= 20))
             {
                 totalScore += 4;
-            }else if ((4 <= sum && sum <= 7) || (21 <= sum && sum <= 24))
+            }
+            else if ((4 <= sum && sum <= 7) || (21 <= sum && sum <= 24))
             {
                 totalScore += 30;
             }
+            
             //Console.WriteLine(totalScore);
             // 1, 2, 3, 4 and 5th rule
-            if(dieA == dieB && dieB == dieC && dieC == dieD)
+            
+            if (dieA == dieB && dieB == dieC && dieC == dieD)
             {
                 //adds 300 points for rule 1
                 totalScore += 300;
-            }else if(dieA == dieB && dieB == dieC ||dieA == dieB && dieB == dieD 
+            } 
+            else if(dieA == dieB && dieB == dieC ||dieA == dieB && dieB == dieD 
                 || dieA == dieC && dieC == dieD ||dieB == dieC && dieC == dieD)
             {
                 // adds 16 points for rule 2
                 totalScore += 16;
-            }else if (dieA == dieB && dieC == dieD || dieA == dieC && dieB == dieD 
+            } 
+            else if (dieA == dieB && dieC == dieD || dieA == dieC && dieB == dieD 
                 || dieB == dieC && dieA == dieD || dieB == dieD && dieA == dieC 
                 || dieC == dieD && dieA == dieB)
             {
                 // adds 20 points for rule 3
                 totalScore += 20;
-            }else if(dieA == dieB || dieA == dieC || dieA == dieD || dieB == dieD || dieC == dieD)
+            } 
+            
+            if (dieA == dieB || dieA == dieC || dieA == dieD || dieB == dieD || dieC == dieD)
             {
                 // adds 3 points for rule 4
                 totalScore += 3;
@@ -291,17 +321,21 @@ namespace DiceGame
                 // is when all the dice are different which is rule 5
                 totalScore += 5;
             }
+            
             //Console.WriteLine(totalScore);
             // 6th rule
-            if(dieA % 2 == dieB % 2 && dieB % 2 == dieC % 2 && dieC % 2 == dieD % 2)
+            
+            if (dieA % 2 == dieB % 2 && dieB % 2 == dieC % 2 && dieC % 2 == dieD % 2)
             {
                 totalScore += 12;
             }
+            
             Console.WriteLine("Your total score is: " + totalScore);
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine("-------------------------------------");
             Console.WriteLine("NAME                  SCORE");
+            
             if (totalScore > 30)
             {
                 Console.Write(userName);
@@ -313,7 +347,8 @@ namespace DiceGame
                 Console.Write("Sibel Yaman");
                 Console.SetCursorPosition(22, 24);
                 Console.WriteLine("18");
-            }else if (totalScore > 18)
+            }
+            else if (totalScore > 18)
             {
                 Console.Write("Cem Ak");
                 Console.SetCursorPosition(22, 22);
