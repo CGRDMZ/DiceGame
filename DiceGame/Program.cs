@@ -38,8 +38,29 @@ namespace DiceGame
                 return;
             }else if(chosenMenu == 3)
             {
-                Console.WriteLine("");
-            }else if (chosenMenu == 1)
+
+                Console.Clear();
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine("                             ##########################################################");
+                Console.WriteLine("                                               - High Score Table -                    ");
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                                          NAME              SCORE                      ");
+                Console.WriteLine("                                      1 - Cem Ak              30                       ");
+                Console.WriteLine("                                      2 - Sibel Yaman         18                       ");
+                Console.WriteLine("                                      3 - {0}", userName);
+                Console.SetCursorPosition(63, 11);
+                Console.Write(totalScore);
+                Console.WriteLine("                                                                                       ");
+                Console.WriteLine("                             ##########################################################");
+
+                Console.ReadLine();
+                return;
+            }
+            else if (chosenMenu == 1)
             {
                 dieA = rng.Next(1, 7);
                 dieB = rng.Next(1, 7);
@@ -228,6 +249,7 @@ namespace DiceGame
             }
 
             Console.WriteLine("Dice are {0},{1},{2},{3}", dieA, dieB, dieC, dieD);
+            // calculates sum of the dice for rule 7, 8, 9
             sum = dieA + dieB + dieC + dieD;
 
             //rule 7,8,9
@@ -275,7 +297,48 @@ namespace DiceGame
             {
                 totalScore += 12;
             }
-            Console.WriteLine(" Your total score is: " + totalScore);
+            Console.WriteLine("Your total score is: " + totalScore);
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("-------------------------------------");
+            Console.WriteLine("NAME                  SCORE");
+            if (totalScore > 30)
+            {
+                Console.Write(userName);
+                Console.SetCursorPosition(22, 22);
+                Console.WriteLine(totalScore);
+                Console.Write("Cem Ak");
+                Console.SetCursorPosition(22, 23);
+                Console.WriteLine("30");
+                Console.Write("Sibel Yaman");
+                Console.SetCursorPosition(22, 24);
+                Console.WriteLine("18");
+            }else if (totalScore > 18)
+            {
+                Console.Write("Cem Ak");
+                Console.SetCursorPosition(22, 22);
+                Console.WriteLine("30");
+                Console.Write(userName);
+                Console.SetCursorPosition(22, 23);
+                Console.WriteLine(totalScore);
+                Console.Write("Sibel Yaman");
+                Console.SetCursorPosition(22, 24);
+                Console.WriteLine("18");
+            }
+            else
+            {
+                Console.Write("Cem Ak");
+                Console.SetCursorPosition(22, 22);
+                Console.WriteLine("30");
+                Console.Write("Sibel Yaman");
+                Console.SetCursorPosition(22, 23);
+                Console.WriteLine("18");
+                Console.Write(userName);
+                Console.SetCursorPosition(22, 24);
+                Console.WriteLine(totalScore);
+            }
+
+            // to make the console window not close after the program the program finished
             Console.ReadLine();
 
         }
