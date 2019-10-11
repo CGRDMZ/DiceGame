@@ -87,6 +87,10 @@ namespace DiceGame
                 {
                     Console.WriteLine("!!!Please enter a number between 1 and 6!!!");
                     dieA = Convert.ToInt32(Console.ReadLine());
+                    if (dieA < 1 || dieA > 6)
+                    {
+                        return;
+                    }
                 }
                 Console.WriteLine("please enter the second die: (dice has 6 face)");
                 dieB = Convert.ToInt32(Console.ReadLine());
@@ -94,6 +98,10 @@ namespace DiceGame
                 {
                     Console.WriteLine("!!!Please enter a number between 1 and 6!!!");
                     dieB = Convert.ToInt32(Console.ReadLine());
+                    if (dieB < 1 || dieB > 6)
+                    {
+                        return;
+                    }
                 }
                 Console.WriteLine("please enter the third die: (dice has 6 face)");
                 dieC = Convert.ToInt32(Console.ReadLine());
@@ -101,6 +109,10 @@ namespace DiceGame
                 {
                     Console.WriteLine("!!!Please enter a number between 1 and 6!!!");
                     dieC = Convert.ToInt32(Console.ReadLine());
+                    if (dieC < 1 || dieC > 6)
+                    {
+                        return;
+                    }
                 }
                 Console.WriteLine("please enter the fourth die: (dice has 6 face)");
                 dieD = Convert.ToInt32(Console.ReadLine());
@@ -108,6 +120,10 @@ namespace DiceGame
                 {
                     Console.WriteLine("!!!Please enter a number between 1 and 6!!!");
                     dieD = Convert.ToInt32(Console.ReadLine());
+                    if (dieD < 1 || dieD > 6)
+                    {
+                        return;
+                    }
                 }
                 
             }
