@@ -373,37 +373,37 @@ namespace DiceGame
             if (totalScore > 30)
             {
                 Console.Write(userName);
-                Console.SetCursorPosition(22, 22);
+                Console.SetCursorPosition(22, 23);
                 Console.WriteLine(totalScore);
                 Console.Write("Cem Ak");
-                Console.SetCursorPosition(22, 23);
+                Console.SetCursorPosition(22, 24);
                 Console.WriteLine("30");
                 Console.Write("Sibel Yaman");
-                Console.SetCursorPosition(22, 24);
+                Console.SetCursorPosition(22, 25);
                 Console.WriteLine("18");
             }
             else if (totalScore > 18)
             {
                 Console.Write("Cem Ak");
-                Console.SetCursorPosition(22, 22);
+                Console.SetCursorPosition(22, 23);
                 Console.WriteLine("30");
                 Console.Write(userName);
-                Console.SetCursorPosition(22, 23);
+                Console.SetCursorPosition(22, 24);
                 Console.WriteLine(totalScore);
                 Console.Write("Sibel Yaman");
-                Console.SetCursorPosition(22, 24);
+                Console.SetCursorPosition(22, 25);
                 Console.WriteLine("18");
             }
             else
             {
                 Console.Write("Cem Ak");
-                Console.SetCursorPosition(22, 22);
+                Console.SetCursorPosition(22, 23);
                 Console.WriteLine("30");
                 Console.Write("Sibel Yaman");
-                Console.SetCursorPosition(22, 23);
+                Console.SetCursorPosition(22, 24);
                 Console.WriteLine("18");
                 Console.Write(userName);
-                Console.SetCursorPosition(22, 24);
+                Console.SetCursorPosition(22, 25);
                 Console.WriteLine(totalScore);
             }
 
