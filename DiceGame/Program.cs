@@ -291,28 +291,7 @@ namespace DiceGame
             string rulesPassedText = "Rules passed are:";
            
             
-            // calculates sum of the dice for rule 7, 8, 9
-            sum = dieA + dieB + dieC + dieD;
-
-            //rule 7,8,9
-            if(12 <= sum && sum <= 16)
-            {
-                totalScore += 2;
-
-                rulesPassedText += " 7";
-            }
-            else if ((8 <= sum && sum <= 11) || (17 <= sum && sum <= 20))
-            {
-                totalScore += 4;
-
-                rulesPassedText += " 8";
-            }
-            else if ((4 <= sum && sum <= 7) || (21 <= sum && sum <= 24))
-            {
-                totalScore += 30;
-
-                rulesPassedText += " 9";
-            }
+            
             
             //Console.WriteLine(totalScore);
             // 1, 2, 3, 4 and 5th rule
@@ -321,14 +300,14 @@ namespace DiceGame
             {
                 //adds 300 points for rule 1
                 totalScore += 300;
-                rulesPassedText += ", 1";
+                rulesPassedText += " 1";
             } 
             else if(dieA == dieB && dieB == dieC ||dieA == dieB && dieB == dieD 
                 || dieA == dieC && dieC == dieD ||dieB == dieC && dieC == dieD)
             {
                 // adds 16 points for rule 2
                 totalScore += 16;
-                rulesPassedText += ", 2";
+                rulesPassedText += " 2";
             } 
             else if (dieA == dieB && dieC == dieD || dieA == dieC && dieB == dieD 
                 || dieB == dieC && dieA == dieD || dieB == dieD && dieA == dieC 
@@ -336,21 +315,21 @@ namespace DiceGame
             {
                 // adds 20 points for rule 3
                 totalScore += 20;
-                rulesPassedText += ", 3";
+                rulesPassedText += " 3";
             } 
             
             if (dieA == dieB || dieA == dieC || dieA == dieD || dieB == dieD || dieC == dieD)
             {
                 // adds 3 points for rule 4
                 totalScore += 3;
-                rulesPassedText += ", 4";
+                rulesPassedText += " 4";
             }
             else
             {
                 // if none of the rules above are false then only possible combination
                 // is when all the dice are different which is rule 5
                 totalScore += 5;
-                rulesPassedText += ", 5";
+                rulesPassedText += " 5";
             }
             
             //Console.WriteLine(totalScore);
@@ -361,7 +340,29 @@ namespace DiceGame
                 totalScore += 12;
                 rulesPassedText += ", 6";
             }
-            
+            // calculates sum of the dice for rule 7, 8, 9
+            sum = dieA + dieB + dieC + dieD;
+
+            //rule 7,8,9
+            if (12 <= sum && sum <= 16)
+            {
+                totalScore += 2;
+
+                rulesPassedText += ", 7";
+            }
+            else if ((8 <= sum && sum <= 11) || (17 <= sum && sum <= 20))
+            {
+                totalScore += 4;
+
+                rulesPassedText += ", 8";
+            }
+            else if ((4 <= sum && sum <= 7) || (21 <= sum && sum <= 24))
+            {
+                totalScore += 30;
+
+                rulesPassedText += ", 9";
+            }
+
             //Passes rule numbers are appended to rulesPassedText string and we are displaying it here
             Console.WriteLine(rulesPassedText);
             
