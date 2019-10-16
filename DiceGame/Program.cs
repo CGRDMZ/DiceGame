@@ -4,6 +4,7 @@ namespace DiceGame
 {
     class Program
     {
+        //when the game ends,print a message (press any key to exit)
         static void Main(string[] args)
         {
             Random rng = new Random();
