@@ -322,14 +322,14 @@ namespace DiceGame
             {
                 // adds 3 points for rule 4
                 totalScore += 3;
-                rulesPassedText += " 4";
+                rulesPassedText += ", 4";
             }
             else
             {
                 // if none of the rules above are false then only possible combination
                 // is when all the dice are different which is rule 5
                 totalScore += 5;
-                rulesPassedText += " 5";
+                rulesPassedText += ", 5";
             }
             
             //Console.WriteLine(totalScore);
