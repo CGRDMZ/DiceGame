@@ -131,7 +131,8 @@ namespace DiceGame
             
             Console.Clear();
             Console.WriteLine("First die is: " + dieA);
-            
+            // these statements should be rewritten as else if's because if a dice is 1 it can't be 2, too so no need to check it.
+            // shows dices visually
             if (dieA == 1)
             {
                 Console.WriteLine("|     |");
