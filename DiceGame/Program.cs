@@ -128,6 +128,12 @@ namespace DiceGame
                 }
                 
             }
+            else
+            {
+                Console.WriteLine("Please enter a number between 1 and 4!");
+                Console.ReadLine();
+                return;
+            }
             
             Console.Clear();
             Console.WriteLine("First die is: " + dieA);
@@ -138,31 +144,31 @@ namespace DiceGame
                 Console.WriteLine("|  *  |");
                 Console.WriteLine("|     |");
             }
-            if (dieA == 2)
+            else if (dieA == 2)
             {
                 Console.WriteLine("|    *|");
                 Console.WriteLine("|     |");
                 Console.WriteLine("|*    |");
             }
-            if (dieA == 3)
+            else if (dieA == 3)
             {
                 Console.WriteLine("|    *|");
                 Console.WriteLine("|  *  |");
                 Console.WriteLine("|*    |");
             }
-            if (dieA == 4)
+            else if (dieA == 4)
             {
                 Console.WriteLine("|*   *|");
                 Console.WriteLine("|     |");
                 Console.WriteLine("|*   *|");
             }
-            if (dieA == 5)
+            else if (dieA == 5)
             {
                 Console.WriteLine("|*   *|");
                 Console.WriteLine("|  *  |");
                 Console.WriteLine("|*   *|");
             }
-            if (dieA == 6)
+            else if (dieA == 6)
             {
                 Console.WriteLine("|*   *|");
                 Console.WriteLine("|*   *|");
@@ -177,31 +183,31 @@ namespace DiceGame
                 Console.WriteLine("|  *  |");
                 Console.WriteLine("|     |");
             }
-            if (dieB == 2)
+            else if (dieB == 2)
             {
                 Console.WriteLine("|    *|");
                 Console.WriteLine("|     |");
                 Console.WriteLine("|*    |");
             }
-            if (dieB == 3)
+            else if (dieB == 3)
             {
                 Console.WriteLine("|    *|");
                 Console.WriteLine("|  *  |");
                 Console.WriteLine("|*    |");
             }
-            if (dieB == 4)
+            else if (dieB == 4)
             {
                 Console.WriteLine("|*   *|");
                 Console.WriteLine("|     |");
                 Console.WriteLine("|*   *|");
             }
-            if (dieB == 5)
+            else if (dieB == 5)
             {
                 Console.WriteLine("|*   *|");
                 Console.WriteLine("|  *  |");
                 Console.WriteLine("|*   *|");
             }
-            if (dieB == 6)
+            else if (dieB == 6)
             {
                 Console.WriteLine("|*   *|");
                 Console.WriteLine("|*   *|");
@@ -216,31 +222,31 @@ namespace DiceGame
                 Console.WriteLine("|  *  |");
                 Console.WriteLine("|     |");
             }
-            if (dieC == 2)
+            else if (dieC == 2)
             {
                 Console.WriteLine("|    *|");
                 Console.WriteLine("|     |");
                 Console.WriteLine("|*    |");
             }
-            if (dieC == 3)
+            else if (dieC == 3)
             {
                 Console.WriteLine("|    *|");
                 Console.WriteLine("|  *  |");
                 Console.WriteLine("|*    |");
             }
-            if (dieC == 4)
+            else if (dieC == 4)
             {
                 Console.WriteLine("|*   *|");
                 Console.WriteLine("|     |");
                 Console.WriteLine("|*   *|");
             }
-            if (dieC == 5)
+            else if (dieC == 5)
             {
                 Console.WriteLine("|*   *|");
                 Console.WriteLine("|  *  |");
                 Console.WriteLine("|*   *|");
             }
-            if (dieC == 6)
+            else if (dieC == 6)
             {
                 Console.WriteLine("|*   *|");
                 Console.WriteLine("|*   *|");
@@ -255,31 +261,31 @@ namespace DiceGame
                 Console.WriteLine("|  *  |");
                 Console.WriteLine("|     |");
             }
-            if (dieD == 2)
+            else if (dieD == 2)
             {
                 Console.WriteLine("|    *|");
                 Console.WriteLine("|     |");
                 Console.WriteLine("|*    |");
             }
-            if (dieD == 3)
+            else if (dieD == 3)
             {
                 Console.WriteLine("|    *|");
                 Console.WriteLine("|  *  |");
                 Console.WriteLine("|*    |");
             }
-            if (dieD == 4)
+            else if (dieD == 4)
             {
                 Console.WriteLine("|*   *|");
                 Console.WriteLine("|     |");
                 Console.WriteLine("|*   *|");
             }
-            if (dieD == 5)
+            else if (dieD == 5)
             {
                 Console.WriteLine("|*   *|");
                 Console.WriteLine("|  *  |");
                 Console.WriteLine("|*   *|");
             }
-            if (dieD == 6)
+            else if (dieD == 6)
             {
                 Console.WriteLine("|*   *|");
                 Console.WriteLine("|*   *|");
@@ -316,9 +322,8 @@ namespace DiceGame
                 // adds 20 points for rule 3
                 totalScore += 20;
                 rulesPassedText += " 3";
-            } 
-            
-            if (dieA == dieB || dieA == dieC || dieA == dieD || dieB == dieD || dieC == dieD)
+            }
+            else if (dieA == dieB || dieA == dieC || dieA == dieD || dieB == dieD || dieC == dieD)
             {
                 // adds 3 points for rule 4
                 totalScore += 3;
