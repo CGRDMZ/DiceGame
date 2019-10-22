@@ -4,7 +4,6 @@ namespace DiceGame
 {
     class Program
     {
-        //when the game ends, print a message (press any key to exit)
         static void Main(string[] args)
         {
             Random rng = new Random();
@@ -15,8 +14,6 @@ namespace DiceGame
             int dieA = 0, dieB = 0, dieC = 0, dieD = 0;
             int sum = 0;
 
-            string name_player2 = "Cem Ak";
-
             bool running = true;
             
             //float centerX = Console.WindowWidth / 2;
@@ -25,6 +22,7 @@ namespace DiceGame
             Console.WriteLine("Please enter your name:");
             
             userName = Console.ReadLine();
+
             while (running)
             {
                 //Console.Clear();
@@ -70,26 +68,72 @@ namespace DiceGame
                     }
                     else if (chosenMenu == 3)
                     {
-
-                        Console.Clear();
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine("                             ##########################################################");
-                        Console.WriteLine("                                               - High Score Table -                    ");
-                        Console.WriteLine("                                                                                       ");
-                        Console.WriteLine("                                          NAME              SCORE                      ");
-                        Console.WriteLine("                                      1 - Cem Ak              30                       ");
-                        Console.WriteLine("                                      2 - Sibel Yaman         18                       ");
-                        Console.WriteLine("                                      3 - {0}", userName);
-                        Console.SetCursorPosition(63, 11);
-                        Console.Write(totalScore);
-                        Console.WriteLine("                                                                                       ");
-                        Console.WriteLine("                             ##########################################################");
-                        Console.WriteLine();
-                        Console.WriteLine("press any key to go to main menu...");
+                        if (totalScore <= 18)
+                        {
+                            Console.Clear();
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("                             ##########################################################");
+                            Console.WriteLine("                                               - High Score Table -                    ");
+                            Console.WriteLine("                                                                                       ");
+                            Console.WriteLine("                                          NAME              SCORE                      ");
+                            Console.WriteLine("                                      1 - Cem Ak              30                       ");
+                            Console.WriteLine("                                      2 - Sibel Yaman         18                       ");
+                            Console.WriteLine("                                      3 - {0}", userName);
+                            Console.SetCursorPosition(62, 11);
+                            Console.WriteLine(totalScore);
+                            Console.WriteLine("                                                                                       ");
+                            Console.WriteLine("                             ##########################################################");
+                            Console.WriteLine();
+                            Console.WriteLine("press any key to go to main menu...");
+                        }
+                        else if (totalScore <= 30)
+                        {
+                            Console.Clear();
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("                             ##########################################################");
+                            Console.WriteLine("                                               - High Score Table -                    ");
+                            Console.WriteLine("                                                                                       ");
+                            Console.WriteLine("                                          NAME              SCORE                      ");
+                            Console.WriteLine("                                      1 - Cem Ak              30                       ");
+                            Console.WriteLine("                                      2 - {0}", userName);
+                            Console.SetCursorPosition(62, 10);
+                            Console.WriteLine(totalScore);
+                            Console.WriteLine("                                      3 - Sibel Yaman         18                       ");
+                            Console.WriteLine("                                                                                       ");
+                            Console.WriteLine("                             ##########################################################");
+                            Console.WriteLine();
+                            Console.WriteLine("press any key to go to main menu...");
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("                             ##########################################################");
+                            Console.WriteLine("                                               - High Score Table -                    ");
+                            Console.WriteLine("                                                                                       ");
+                            Console.WriteLine("                                          NAME              SCORE                      ");
+                            Console.WriteLine("                                      1 - {0}", userName);
+                            Console.SetCursorPosition(62, 9);
+                            Console.WriteLine(totalScore);
+                            Console.WriteLine("                                      1 - Cem Ak              30                       ");
+                            Console.WriteLine("                                      3 - Sibel Yaman         18                       ");
+                            Console.WriteLine("                                                                                       ");
+                            Console.WriteLine("                             ##########################################################");
+                            Console.WriteLine();
+                            Console.WriteLine("press any key to go to main menu...");
+                        }
                         Console.ReadLine();
                         continue;
 
@@ -230,10 +274,6 @@ namespace DiceGame
                         }
                         break;
                     }
-                    if (chosenMenu == 3)
-                    {
-                        break;
-                    }
                 }
                 
 
@@ -247,31 +287,31 @@ namespace DiceGame
                     Console.WriteLine("|  *  |");
                     Console.WriteLine("|     |");
                 }
-                if (dieA == 2)
+                else if (dieA == 2)
                 {
                     Console.WriteLine("|    *|");
                     Console.WriteLine("|     |");
                     Console.WriteLine("|*    |");
                 }
-                if (dieA == 3)
+                else if (dieA == 3)
                 {
                     Console.WriteLine("|    *|");
                     Console.WriteLine("|  *  |");
                     Console.WriteLine("|*    |");
                 }
-                if (dieA == 4)
+                else if (dieA == 4)
                 {
                     Console.WriteLine("|*   *|");
                     Console.WriteLine("|     |");
                     Console.WriteLine("|*   *|");
                 }
-                if (dieA == 5)
+                else if (dieA == 5)
                 {
                     Console.WriteLine("|*   *|");
                     Console.WriteLine("|  *  |");
                     Console.WriteLine("|*   *|");
                 }
-                if (dieA == 6)
+                else if (dieA == 6)
                 {
                     Console.WriteLine("|*   *|");
                     Console.WriteLine("|*   *|");
@@ -286,31 +326,31 @@ namespace DiceGame
                     Console.WriteLine("|  *  |");
                     Console.WriteLine("|     |");
                 }
-                if (dieB == 2)
+                else if (dieB == 2)
                 {
                     Console.WriteLine("|    *|");
                     Console.WriteLine("|     |");
                     Console.WriteLine("|*    |");
                 }
-                if (dieB == 3)
+                else if (dieB == 3)
                 {
                     Console.WriteLine("|    *|");
                     Console.WriteLine("|  *  |");
                     Console.WriteLine("|*    |");
                 }
-                if (dieB == 4)
+                else if (dieB == 4)
                 {
                     Console.WriteLine("|*   *|");
                     Console.WriteLine("|     |");
                     Console.WriteLine("|*   *|");
                 }
-                if (dieB == 5)
+                else if (dieB == 5)
                 {
                     Console.WriteLine("|*   *|");
                     Console.WriteLine("|  *  |");
                     Console.WriteLine("|*   *|");
                 }
-                if (dieB == 6)
+                else if (dieB == 6)
                 {
                     Console.WriteLine("|*   *|");
                     Console.WriteLine("|*   *|");
@@ -325,31 +365,31 @@ namespace DiceGame
                     Console.WriteLine("|  *  |");
                     Console.WriteLine("|     |");
                 }
-                if (dieC == 2)
+                else if (dieC == 2)
                 {
                     Console.WriteLine("|    *|");
                     Console.WriteLine("|     |");
                     Console.WriteLine("|*    |");
                 }
-                if (dieC == 3)
+                else if (dieC == 3)
                 {
                     Console.WriteLine("|    *|");
                     Console.WriteLine("|  *  |");
                     Console.WriteLine("|*    |");
                 }
-                if (dieC == 4)
+                else if (dieC == 4)
                 {
                     Console.WriteLine("|*   *|");
                     Console.WriteLine("|     |");
                     Console.WriteLine("|*   *|");
                 }
-                if (dieC == 5)
+                else if (dieC == 5)
                 {
                     Console.WriteLine("|*   *|");
                     Console.WriteLine("|  *  |");
                     Console.WriteLine("|*   *|");
                 }
-                if (dieC == 6)
+                else if (dieC == 6)
                 {
                     Console.WriteLine("|*   *|");
                     Console.WriteLine("|*   *|");
@@ -364,31 +404,31 @@ namespace DiceGame
                     Console.WriteLine("|  *  |");
                     Console.WriteLine("|     |");
                 }
-                if (dieD == 2)
+                else if (dieD == 2)
                 {
                     Console.WriteLine("|    *|");
                     Console.WriteLine("|     |");
                     Console.WriteLine("|*    |");
                 }
-                if (dieD == 3)
+                else if (dieD == 3)
                 {
                     Console.WriteLine("|    *|");
                     Console.WriteLine("|  *  |");
                     Console.WriteLine("|*    |");
                 }
-                if (dieD == 4)
+                else if (dieD == 4)
                 {
                     Console.WriteLine("|*   *|");
                     Console.WriteLine("|     |");
                     Console.WriteLine("|*   *|");
                 }
-                if (dieD == 5)
+                else if (dieD == 5)
                 {
                     Console.WriteLine("|*   *|");
                     Console.WriteLine("|  *  |");
                     Console.WriteLine("|*   *|");
                 }
-                if (dieD == 6)
+                else if (dieD == 6)
                 {
                     Console.WriteLine("|*   *|");
                     Console.WriteLine("|*   *|");
@@ -426,8 +466,7 @@ namespace DiceGame
                     totalScore += 20;
                     rulesPassedText += " 3";
                 }
-
-                if (dieA == dieB || dieA == dieC || dieA == dieD || dieB == dieD || dieC == dieD)
+                else if (dieA == dieB || dieA == dieC || dieA == dieD || dieB == dieD || dieC == dieD)
                 {
                     // adds 3 points for rule 4
                     totalScore += 3;
