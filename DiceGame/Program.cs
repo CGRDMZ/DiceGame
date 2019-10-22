@@ -4,7 +4,7 @@ namespace DiceGame
 {
     class Program
     {
-        //when the game ends,print a message (press any key to exit)
+        //when the game ends, print a message (press any key to exit)
         static void Main(string[] args)
         {
             Random rng = new Random();
@@ -14,6 +14,10 @@ namespace DiceGame
             int totalScore = 0;
             int dieA = 0, dieB = 0, dieC = 0, dieD = 0;
             int sum = 0;
+
+            string name_player2 = "Cem Ak";
+
+            bool running = true;
             
             //float centerX = Console.WindowWidth / 2;
             //float centerY = Console.WindowHeight / 2;
@@ -21,7 +25,7 @@ namespace DiceGame
             Console.WriteLine("Please enter your name:");
             
             userName = Console.ReadLine();
-            while (true)
+            while (running)
             {
                 //Console.Clear();
                 //Console.WriteLine();
@@ -57,6 +61,7 @@ namespace DiceGame
                     Console.WriteLine("                                      3 - Score Table                                   ");
                     Console.WriteLine("                                      4 - Exit                                          ");
                     Console.WriteLine("                             ##########################################################");
+                    Console.WriteLine();
                     Console.WriteLine("please enter a value between 1 and 4!");
                     chosenMenu = Convert.ToInt32(Console.ReadLine());
                     if (chosenMenu == 4)
@@ -83,9 +88,10 @@ namespace DiceGame
                         Console.Write(totalScore);
                         Console.WriteLine("                                                                                       ");
                         Console.WriteLine("                             ##########################################################");
-
+                        Console.WriteLine();
+                        Console.WriteLine("press any key to go to main menu...");
                         Console.ReadLine();
-                        break;
+                        continue;
 
                     }
                     else if (chosenMenu == 1)
@@ -513,9 +519,12 @@ namespace DiceGame
                 }
 
 
-                Console.WriteLine("# press any key to play again #");
+                Console.WriteLine("# write anything to play again (write '-1' to exit) #");
                 // to make the console window not close after the program the program finished
-                Console.ReadLine();
+                if (Console.ReadLine() == "-1")
+                {
+                    running = false;
+                }
             }
 
         }
