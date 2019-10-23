@@ -2,31 +2,51 @@
 
 namespace DiceGame
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Random rng = new Random();
-            string userName = "";
-            
+            string userName = "Jack";
+
             int chosenMenu = 0;
             int dieA = 0, dieB = 0, dieC = 0, dieD = 0;
             int sum = 0;
 
+            int totalScore = 0;
+
+            string firstPlayerName = "Cem Ak";
+            int firstPlayerScore = 30;
+
+            string secondPlayerName = "Sibel Yaman";
+            int secondPlayerScore = 18;
+
+            string thirdPlayerName = "";
+            int thirdPlayerScore = 0;
+
             bool running = true;
-            
+            string temp;
+
             //float centerX = Console.WindowWidth / 2;
             //float centerY = Console.WindowHeight / 2;
 
-            Console.WriteLine("Please enter your name:");
-            
-            userName = Console.ReadLine();
+            //Console.WriteLine("Please enter your name:");
+
+            //userName = Console.ReadLine();
 
             while (running)
             {
                 
-                int totalScore = 0;
-                
+                // reset the score so it doesnt add to previous game
+                totalScore = 0;
+
+                Console.Clear();
+                Console.WriteLine("Please enter your name: (if you want to keep your previous name write '-1') default: Jack ");
+                temp = Console.ReadLine();
+                if (temp != "-1")
+                {
+                    userName = temp;
+                }
                 //Console.Clear();
                 //Console.WriteLine();
                 //Console.WriteLine();
@@ -42,7 +62,6 @@ namespace DiceGame
                 //Console.WriteLine("                                      3 - Score Table                                   ");
                 //Console.WriteLine("                                      4 - Exit                                          ");
                 //Console.WriteLine("                             ##########################################################");
-
 
                 while (true)
                 {
@@ -70,85 +89,46 @@ namespace DiceGame
                     }
                     else if (chosenMenu == 3)
                     {
-                        if (totalScore <= 18)
-                        {
-                            Console.Clear();
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine("                             ##########################################################");
-                            Console.WriteLine("                                               - High Score Table -                    ");
-                            Console.WriteLine("                                                                                       ");
-                            Console.WriteLine("                                          NAME              SCORE                      ");
-                            Console.WriteLine("                                      1 - Cem Ak              30                       ");
-                            Console.WriteLine("                                      2 - Sibel Yaman         18                       ");
-                            Console.WriteLine("                                      3 - {0}", userName);
-                            Console.SetCursorPosition(62, 11);
-                            Console.WriteLine(totalScore);
-                            Console.WriteLine("                                                                                       ");
-                            Console.WriteLine("                             ##########################################################");
-                            Console.WriteLine();
-                            Console.WriteLine("press any key to go to main menu...");
-                        }
-                        else if (totalScore <= 30)
-                        {
-                            Console.Clear();
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine("                             ##########################################################");
-                            Console.WriteLine("                                               - High Score Table -                    ");
-                            Console.WriteLine("                                                                                       ");
-                            Console.WriteLine("                                          NAME              SCORE                      ");
-                            Console.WriteLine("                                      1 - Cem Ak              30                       ");
-                            Console.WriteLine("                                      2 - {0}", userName);
-                            Console.SetCursorPosition(62, 10);
-                            Console.WriteLine(totalScore);
-                            Console.WriteLine("                                      3 - Sibel Yaman         18                       ");
-                            Console.WriteLine("                                                                                       ");
-                            Console.WriteLine("                             ##########################################################");
-                            Console.WriteLine();
-                            Console.WriteLine("press any key to go to main menu...");
-                        }
-                        else
-                        {
-                            Console.Clear();
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine("                             ##########################################################");
-                            Console.WriteLine("                                               - High Score Table -                    ");
-                            Console.WriteLine("                                                                                       ");
-                            Console.WriteLine("                                          NAME              SCORE                      ");
-                            Console.WriteLine("                                      1 - {0}", userName);
-                            Console.SetCursorPosition(62, 9);
-                            Console.WriteLine(totalScore);
-                            Console.WriteLine("                                      1 - Cem Ak              30                       ");
-                            Console.WriteLine("                                      3 - Sibel Yaman         18                       ");
-                            Console.WriteLine("                                                                                       ");
-                            Console.WriteLine("                             ##########################################################");
-                            Console.WriteLine();
-                            Console.WriteLine("press any key to go to main menu...");
-                        }
+                        Console.Clear();
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("                             ##########################################################");
+                        Console.WriteLine("                                               - High Score Table -                    ");
+                        Console.WriteLine("                                                                                       ");
+                        Console.WriteLine("                                          NAME              SCORE                      ");
+                        Console.WriteLine("                                      1 - {0}                                          ",firstPlayerName);
+                        Console.WriteLine("                                      2 - {0}                                          ", secondPlayerName);
+                        Console.WriteLine("                                      3 - {0}                                          ", thirdPlayerName);
+                        Console.WriteLine("                                                                                       ");
+                        Console.WriteLine("                                                                                       ");
+                        Console.WriteLine("                             ##########################################################");
+                        Console.WriteLine();
+                        Console.WriteLine();
+
+                        Console.SetCursorPosition(62, 9);
+                        Console.WriteLine(firstPlayerScore);
+
+                        Console.SetCursorPosition(62, 10);
+                        Console.WriteLine(secondPlayerScore);
+
+                        Console.SetCursorPosition(62, 11);
+                        Console.WriteLine(thirdPlayerScore);
+
+                        Console.WriteLine("press any key to go to main menu...");
+
                         Console.ReadLine();
                         continue;
-
                     }
                     else if (chosenMenu == 1)
                     {
-
                         dieA = rng.Next(1, 7);
                         dieB = rng.Next(1, 7);
                         dieC = rng.Next(1, 7);
                         dieD = rng.Next(1, 7);
                         break;
-
                     }
                     else if (chosenMenu == 2)
                     {
@@ -201,7 +181,7 @@ namespace DiceGame
                                 }
                             }
                         }
-                            
+
                         while (true)
                         {
                             Console.Clear();
@@ -277,7 +257,6 @@ namespace DiceGame
                         break;
                     }
                 }
-                
 
                 Console.Clear();
                 Console.WriteLine("First die is: " + dieA);
@@ -441,9 +420,6 @@ namespace DiceGame
 
                 string rulesPassedText = "Rules passed are:";
 
-
-
-
                 //Console.WriteLine(totalScore);
                 // 1, 2, 3, 4 and 5th rule
 
@@ -516,49 +492,48 @@ namespace DiceGame
                 //Passes rule numbers are appended to rulesPassedText string and we are displaying it here
                 Console.WriteLine(rulesPassedText);
 
+                // calculate top three score
+                if (totalScore > firstPlayerScore)
+                {
+                    thirdPlayerScore = secondPlayerScore;
+                    thirdPlayerName = secondPlayerName;
+
+                    secondPlayerScore = firstPlayerScore;
+                    secondPlayerName = firstPlayerName;
+
+                    firstPlayerScore = totalScore;
+                    firstPlayerName = userName;
+                }
+                else if (totalScore > secondPlayerScore)
+                {
+                    thirdPlayerScore = secondPlayerScore;
+                    thirdPlayerName = secondPlayerName;
+
+                    secondPlayerScore = totalScore;
+                    secondPlayerName = userName;
+                }
+                else if (totalScore > thirdPlayerScore)
+                {
+                    thirdPlayerScore = totalScore;
+                    thirdPlayerName = userName;
+
+                }
+
                 Console.WriteLine("Your total score is: " + totalScore);
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine("-------------------------------------");
                 Console.WriteLine("NAME                  SCORE");
 
-                if (totalScore > 30)
-                {
-                    Console.Write(userName);
-                    Console.SetCursorPosition(22, 23);
-                    Console.WriteLine(totalScore);
-                    Console.Write("Cem Ak");
-                    Console.SetCursorPosition(22, 24);
-                    Console.WriteLine("30");
-                    Console.Write("Sibel Yaman");
-                    Console.SetCursorPosition(22, 25);
-                    Console.WriteLine("18");
-                }
-                else if (totalScore > 18)
-                {
-                    Console.Write("Cem Ak");
-                    Console.SetCursorPosition(22, 23);
-                    Console.WriteLine("30");
-                    Console.Write(userName);
-                    Console.SetCursorPosition(22, 24);
-                    Console.WriteLine(totalScore);
-                    Console.Write("Sibel Yaman");
-                    Console.SetCursorPosition(22, 25);
-                    Console.WriteLine("18");
-                }
-                else
-                {
-                    Console.Write("Cem Ak");
-                    Console.SetCursorPosition(22, 23);
-                    Console.WriteLine("30");
-                    Console.Write("Sibel Yaman");
-                    Console.SetCursorPosition(22, 24);
-                    Console.WriteLine("18");
-                    Console.Write(userName);
-                    Console.SetCursorPosition(22, 25);
-                    Console.WriteLine(totalScore);
-                }
-
+                Console.Write(firstPlayerName);
+                Console.SetCursorPosition(22, 23);
+                Console.WriteLine(firstPlayerScore);
+                Console.Write(secondPlayerName);
+                Console.SetCursorPosition(22, 24);
+                Console.WriteLine(secondPlayerScore);
+                Console.Write(thirdPlayerName);
+                Console.SetCursorPosition(22, 25);
+                Console.WriteLine(thirdPlayerScore);
 
                 Console.WriteLine("# write anything to play again (write '-1' to exit) #");
                 // to make the console window not close after the program the program finished
@@ -567,7 +542,6 @@ namespace DiceGame
                     running = false;
                 }
             }
-
         }
     }
 }
