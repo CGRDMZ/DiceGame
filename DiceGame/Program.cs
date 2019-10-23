@@ -47,6 +47,12 @@ namespace DiceGame
                 {
                     userName = temp;
                 }
+                
+                if (temp == "")
+                {
+                    userName = "Jack";
+                }
+
                 //Console.Clear();
                 //Console.WriteLine();
                 //Console.WriteLine();
