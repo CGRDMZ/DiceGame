@@ -10,7 +10,6 @@ namespace DiceGame
             string userName = "";
             
             int chosenMenu = 0;
-            int totalScore = 0;
             int dieA = 0, dieB = 0, dieC = 0, dieD = 0;
             int sum = 0;
 
@@ -25,6 +24,9 @@ namespace DiceGame
 
             while (running)
             {
+                
+                int totalScore = 0;
+                
                 //Console.Clear();
                 //Console.WriteLine();
                 //Console.WriteLine();
