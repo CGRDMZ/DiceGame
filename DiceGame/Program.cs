@@ -122,6 +122,7 @@ namespace DiceGame
                         Console.SetCursorPosition(62, 11);
                         Console.WriteLine(thirdPlayerScore);
 
+                        Console.SetCursorPosition(0, 16);
                         Console.WriteLine("press any key to go to main menu...");
 
                         Console.ReadLine();
