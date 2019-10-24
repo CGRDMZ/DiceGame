@@ -36,7 +36,6 @@ namespace DiceGame
 
             while (running)
             {
-                
                 // reset the score so it doesnt add to previous game
                 totalScore = 0;
 
@@ -47,7 +46,7 @@ namespace DiceGame
                 {
                     userName = temp;
                 }
-                
+
                 if (temp == "")
                 {
                     userName = "Jack";
@@ -105,7 +104,7 @@ namespace DiceGame
                         Console.WriteLine("                                               - High Score Table -                    ");
                         Console.WriteLine("                                                                                       ");
                         Console.WriteLine("                                          NAME              SCORE                      ");
-                        Console.WriteLine("                                      1 - {0}                                          ",firstPlayerName);
+                        Console.WriteLine("                                      1 - {0}                                          ", firstPlayerName);
                         Console.WriteLine("                                      2 - {0}                                          ", secondPlayerName);
                         Console.WriteLine("                                      3 - {0}                                          ", thirdPlayerName);
                         Console.WriteLine("                                                                                       ");
@@ -160,25 +159,10 @@ namespace DiceGame
                         {
                             while (true)
                             {
-                                //Console.Clear();
-                                //Console.WriteLine();
-                                //Console.WriteLine();
-                                //Console.WriteLine();
-                                //Console.WriteLine();
-                                //Console.WriteLine();
-                                //Console.WriteLine("                             ##########################################################");
-                                //Console.WriteLine("                                                     - MENU -                          ");
-                                //Console.WriteLine("                                                    Player: {0}                            ", userName);
-                                //Console.WriteLine("                                         Game Modes:                                   ");
-                                //Console.WriteLine("                                      1 - Game Mode 1: Throw dice randomly              ");
-                                //Console.WriteLine("                                      2 - Game Mode 2: Throw dice yourself (debugging)  ");
-                                //Console.WriteLine("                                      3 - Score Table                                   ");
-                                //Console.WriteLine("                                      4 - Exit                                          ");
-                                //Console.WriteLine("                             ##########################################################");
-                                Console.SetCursorPosition(0, 16);
+                                Console.SetCursorPosition(0, 14);
                                 Console.WriteLine("                                                                                             ");
                                 Console.WriteLine("                                                                                             ");
-                                Console.SetCursorPosition(0, 16);
+                                Console.SetCursorPosition(0, 14);
                                 Console.WriteLine("please enter the first die again: (dice has 6 face)");
                                 dieA = Convert.ToInt32(Console.ReadLine());
                                 if (dieA > 0 && dieA < 7)
@@ -188,76 +172,61 @@ namespace DiceGame
                             }
                         }
 
-                        while (true)
+                        Console.WriteLine("please enter the second die : (dice has 6 face)");
+                        dieB = Convert.ToInt32(Console.ReadLine());
+
+                        if (dieB < 1 || dieB > 6)
                         {
-                            Console.Clear();
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine("                             ##########################################################");
-                            Console.WriteLine("                                                     - MENU -                          ");
-                            Console.WriteLine("                                                    Player: {0}                            ", userName);
-                            Console.WriteLine("                                         Game Modes:                                   ");
-                            Console.WriteLine("                                      1 - Game Mode 1: Throw dice randomly              ");
-                            Console.WriteLine("                                      2 - Game Mode 2: Throw dice yourself (debugging)  ");
-                            Console.WriteLine("                                      3 - Score Table                                   ");
-                            Console.WriteLine("                                      4 - Exit                                          ");
-                            Console.WriteLine("                             ##########################################################");
-                            Console.WriteLine("please enter the second die again: (dice has 6 face)");
-                            dieB = Convert.ToInt32(Console.ReadLine());
-                            if (dieB > 0 && dieB < 7)
+                            while (true)
                             {
-                                break;
+                                Console.SetCursorPosition(0, 16);
+                                Console.WriteLine("                                                                                             ");
+                                Console.WriteLine("                                                                                             ");
+                                Console.SetCursorPosition(0, 16);
+                                Console.WriteLine("please enter the second die again: (dice has 6 face)");
+                                dieB = Convert.ToInt32(Console.ReadLine());
+                                if (dieB > 0 && dieB < 7)
+                                {
+                                    break;
+                                }
                             }
                         }
-                        while (true)
+
+                        Console.WriteLine("please enter the third die : (dice has 6 face)");
+                        dieC = Convert.ToInt32(Console.ReadLine());
+                        if (dieC < 1 || dieC > 6)
                         {
-                            Console.Clear();
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine("                             ##########################################################");
-                            Console.WriteLine("                                                     - MENU -                          ");
-                            Console.WriteLine("                                                    Player: {0}                            ", userName);
-                            Console.WriteLine("                                         Game Modes:                                   ");
-                            Console.WriteLine("                                      1 - Game Mode 1: Throw dice randomly              ");
-                            Console.WriteLine("                                      2 - Game Mode 2: Throw dice yourself (debugging)  ");
-                            Console.WriteLine("                                      3 - Score Table                                   ");
-                            Console.WriteLine("                                      4 - Exit                                          ");
-                            Console.WriteLine("                             ##########################################################");
-                            Console.WriteLine("please enter the third die again: (dice has 6 face)");
-                            dieC = Convert.ToInt32(Console.ReadLine());
-                            if (dieC > 0 && dieC < 7)
+                            while (true)
                             {
-                                break;
+                                Console.SetCursorPosition(0, 18);
+                                Console.WriteLine("                                                                                             ");
+                                Console.WriteLine("                                                                                             ");
+                                Console.SetCursorPosition(0, 18);
+                                Console.WriteLine("please enter the third die again: (dice has 6 face)");
+                                dieC = Convert.ToInt32(Console.ReadLine());
+                                if (dieC > 0 && dieC < 7)
+                                {
+                                    break;
+                                }
                             }
                         }
-                        while (true)
+
+                        Console.WriteLine("please enter the fourth die : ( has 6 face)");
+                        dieD = Convert.ToInt32(Console.ReadLine());
+                        if (dieD < 1 || dieD > 6)
                         {
-                            Console.Clear();
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine("                             ##########################################################");
-                            Console.WriteLine("                                                     - MENU -                          ");
-                            Console.WriteLine("                                                    Player: {0}                            ", userName);
-                            Console.WriteLine("                                         Game Modes:                                   ");
-                            Console.WriteLine("                                      1 - Game Mode 1: Throw dice randomly              ");
-                            Console.WriteLine("                                      2 - Game Mode 2: Throw dice yourself (debugging)  ");
-                            Console.WriteLine("                                      3 - Score Table                                   ");
-                            Console.WriteLine("                                      4 - Exit                                          ");
-                            Console.WriteLine("                             ##########################################################");
-                            Console.WriteLine("please enter the fourth die again: (dice has 6 face)");
-                            dieD = Convert.ToInt32(Console.ReadLine());
-                            if (dieD > 0 && dieD < 7)
+                            while (true)
                             {
-                                break;
+                                Console.SetCursorPosition(0, 20);
+                                Console.WriteLine("                                                                                             ");
+                                Console.WriteLine("                                                                                             ");
+                                Console.SetCursorPosition(0, 20);
+                                Console.WriteLine("please enter the fourth die again: (dice has 6 face)");
+                                dieD = Convert.ToInt32(Console.ReadLine());
+                                if (dieD > 0 && dieD < 7)
+                                {
+                                    break;
+                                }
                             }
                         }
                         break;
@@ -522,7 +491,6 @@ namespace DiceGame
                 {
                     thirdPlayerScore = totalScore;
                     thirdPlayerName = userName;
-
                 }
 
                 Console.WriteLine("Your total score is: " + totalScore);
